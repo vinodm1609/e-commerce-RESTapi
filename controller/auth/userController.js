@@ -1,5 +1,7 @@
-import users from '../../models/user.js'
-import CustomErrorHandler from '../../services/customErrorHandler.js';
+/** @format */
+
+import users from "../../models/user.js";
+import CustomErrorHandler from "../../services/customErrorHandler.js";
 
 const userController = {
     async me(req, res, next) {
@@ -10,16 +12,15 @@ const userController = {
 
             // user nahi mila ta hai toa
             if (!user) {
-                return next(CustomErrorHandler.notFound())
+                return next(CustomErrorHandler.notFound());
             }
 
-            //agger hai 
-            res.json(user)
+            //agger hai
+            res.json(user);
         } catch (err) {
-            return next(err)
+            return next(err);
         }
-    }
-}
-
+    },
+};
 
 export default userController;
